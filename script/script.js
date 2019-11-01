@@ -1,4 +1,3 @@
-//Main class
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
@@ -12,25 +11,96 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-var Locations = /** @class */ (function () {
-    function Locations(country, city, zip, address, teaserimage) {
+var output = document.querySelector(".output");
+var data = [];
+console.log(data);
+//Parent Class
+var Location = /** @class */ (function () {
+    function Location(country, city, address, img) {
+        this.country = "";
+        this.city = "";
+        this.address = "";
+        this.img = "";
+        this.country = country;
+        this.city = city;
+        this.address = address;
+        this.img = "";
     }
-    Locations.prototype.display = function () {
-        //That base class has the function display() which is used for displaying the object’s properties on the screen as HTML.
+    Location.prototype.datahans = function (i) {
+        output.innerHTML +=
+            "<div class =\"card cardSet1 text-white\">\n                <div class=\"card-body\">\n                    <img src=\"" + this.img + "\" class=\"img-thumbnail\" alt=\"AL\"width=\"auto\">\n                    <h3 class=\"card-title mt-2\">" + this.country + "</h3>\n                    <h5 class=\"card-subtitle\">" + this.city + "</h5>\n                    <p class=\"card-para\">" + this.address + "</p>\n                    \n\n                    \n                </div>\n            </div>";
     };
-    return Locations;
+    return Location;
 }());
+//Restaurants
+var restaurant = /** @class */ (function (_super) {
+    __extends(restaurant, _super);
+    function restaurant(country, city, address, img, name, type, open, tel, web) {
+        var _this = _super.call(this, country, city, address, img) || this;
+        _this.name = "";
+        _this.type = "";
+        _this.open = "";
+        _this.tel = "";
+        _this.web = "";
+        _this.name = name;
+        _this.type = type;
+        _this.open = open;
+        _this.tel = tel;
+        _this.web = web;
+        return _this;
+    }
+    return restaurant;
+}(Location));
+var moon = new restaurant("Netherlands", "Amsterdam", "Overhoeksplein 3, 1031 KS", "./img/moonrest.jpg", "Moon", "Gourmet", "12–2pm, 6–9pm", "phone: +31 20 237 6311", "https://restaurantmoon.nl/");
+var zaza = new restaurant("Netherlands", "Amsterdam", "Daniël Stalpertstraat 103,1072 XD", ".img/zaza.png", "Zaza", "casual", "6:15 pm – 10:00 pm", "phone: +31 (0) 20 673 6333", "http://zazas.nl/");
+var bakers = new restaurant("Netherlands", "Amsterdam", "Eerste Jacob van Campenstraat 54,1072 BH", ".img/bakers.jpg", "Bakers and Roasters", "breakfast", "8:30 am - 4pm", "phone: +31 20 772 2627", "http://www.bakersandroasters.com/");
+// Clubs
+var club = /** @class */ (function (_super) {
+    __extends(club, _super);
+    function club(country, city, address, img, name, music, entry, dresscode) {
+        var _this = _super.call(this, country, city, address, img) || this;
+        _this.name = "";
+        _this.music = "";
+        _this.entry = "";
+        _this.dresscode = "";
+        _this.name = name;
+        _this.music = music;
+        _this.entry = entry;
+        _this.dresscode = dresscode;
+        return _this;
+    }
+    return club;
+}(Location));
+var melkweg = new club("Netherlands", "Amsterdam", "Lijnbaansgracht 234A, 1017 PH", ".img/melkweg.jpg", "Melkweg", "from hippies to punk, from grunge to hip hop.", "10-60€", "no dresscode");
+var wester = new club("Netherlands", "Amsterdam", "Klönneplein 4-6, 1014 DD", ".img/wester.jpg", "Wester Unie", "House & Techno", "10-30€", "no dresscode");
+var jimmy = new club("Netherlands", "Amsterdam", "Korte Leidsedwarsstraat 18, 1017 RC", ".img/jimmy.jpg", "Jimmy Woo", "R&B,Hip-Hop,Techno", "10-20€", "casual");
+// Events
+var events = /** @class */ (function (_super) {
+    __extends(events, _super);
+    function events(country, city, address, img, name, type, date, costs) {
+        var _this = _super.call(this, country, city, address, img) || this;
+        _this.name = "";
+        _this.type = "";
+        _this.date = "";
+        _this.costs = "";
+        _this.name = name;
+        _this.type = type;
+        _this.date = date;
+        _this.costs = costs;
+        return _this;
+    }
+    return events;
+}(Location));
+var lightshow = new events("Netherlands", "Amsterdam", "Amsterdam", ".img/amsterdamevent.jpg", "Amsterdam Light Festival", "winter outdoor festival of modern art, light and water.", " Nov 28, 2019-Jan 19, 2020", "for free");
+var christmas = new events("Netherlands", "Amsterdam", "Throughout Amsterdam", ".img/christmas.jpg", "Amsterdam Christmas Market", "Christmas", "Late November until early January", "free entry");
+var kings = new events("Netherlands", "Amsterdam", "Amsterdam", ".img/kings.jpg", "Kings Day", "Kings Day is a National Holiday", "27th April", "for free");
+for (var i = 0; i < data.length; i++) {
+    show[i].datahans();
+}
+//child class
+//class für Restaurants, und Events...
 /*Wenn ein Konstruktor verwendet wird,
 muss das super Schlüsselwort verwendet werden,
 bevor das this Schlüsselwort verwendet werden kann.
 Mit dem super Schlüsselwort kann man auch Funktionen
-im Vaterobjekt ausführen.*/
-//child class
-var Place = /** @class */ (function (_super) {
-    __extends(Place, _super);
-    function Place(country, city, zip, address, teaserimage) {
-        return _super.call(this, country, city, zip, address, teaserimage) || this;
-    }
-    return Place;
-}(Locations));
-//class für Restaurants, und Events...
+im Vaterobjekt ausführen.*/ 
