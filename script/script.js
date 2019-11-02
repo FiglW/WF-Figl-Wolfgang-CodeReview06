@@ -26,10 +26,6 @@ var Location = /** @class */ (function () {
         this.address = address;
         this.img = "";
     }
-    Location.prototype.datahans = function (i) {
-        output.innerHTML +=
-            "<div class =\"card cardSet1 text-white\">\n                <div class=\"card-body\">\n                    <img src=\"" + this.img + "\" class=\"img-thumbnail\" alt=\"AL\"width=\"auto\">\n                    <h3 class=\"card-title mt-2\">" + this.country + "</h3>\n                    <h5 class=\"card-subtitle\">" + this.city + "</h5>\n                    <p class=\"card-para\">" + this.address + "</p>\n                    \n\n                    \n                </div>\n            </div>";
-    };
     return Location;
 }());
 //Restaurants
@@ -94,11 +90,6 @@ var events = /** @class */ (function (_super) {
 var lightshow = new events("Netherlands", "Amsterdam", "Amsterdam", ".img/amsterdamevent.jpg", "Amsterdam Light Festival", "winter outdoor festival of modern art, light and water.", " Nov 28, 2019-Jan 19, 2020", "for free");
 var christmas = new events("Netherlands", "Amsterdam", "Throughout Amsterdam", ".img/christmas.jpg", "Amsterdam Christmas Market", "Christmas", "Late November until early January", "free entry");
 var kings = new events("Netherlands", "Amsterdam", "Amsterdam", ".img/kings.jpg", "Kings Day", "Kings Day is a National Holiday", "27th April", "for free");
-for (var i = 0; i < data.length; i++) {
-    show[i].datahans();
-}
-//child class
-//class für Restaurants, und Events...
 /*Wenn ein Konstruktor verwendet wird,
 muss das super Schlüsselwort verwendet werden,
 bevor das this Schlüsselwort verwendet werden kann.
