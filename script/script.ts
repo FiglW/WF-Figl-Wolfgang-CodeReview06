@@ -51,6 +51,7 @@ let bakers = new restaurant("Netherlands","Amsterdam","Eerste Jacob van Campenst
 data.push(moon)
 data.push(zaza)
 data.push(bakers)
+
 // Clubs
 class club extends Location{
 	name = "";
