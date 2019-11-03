@@ -1,10 +1,14 @@
-let output = document.querySelector(".output");
+// was brauch ich alles
+
+
+let output = document.querySelector(".out");
 let data = [];
+let counter = 0;
 console.log(data);
 
 //Parent Class
 
-class Location{
+class place{
 	country = "";
 	city = "";
 	address = "";
@@ -13,17 +17,27 @@ class Location{
 		this.country = country;
 		this.city = city;
 		this.address = address;
-		this.img = "";
+		this.img = img;
 	}
 
+showhans(i){
+		output.innerHTML += 
+		`<div class ="col-lg-4 col-md-6 card cardSet1 text-white">
+                <div class="card-body">
+                    <img src="${this.img}" class="img-thumbnail" alt="AL"width="auto">
+                    <h3 class="card-title mt-2">${this.country}</h3>
+                    <h5 class="card-subtitle">${this.city}</h5>
+                    <h6 class="card-subtitle">${this.address}</h6>
+                </div>
+            </div>`
 
-	
-
+}
 }
 
 
+
 //Restaurants
-class restaurant extends Location{
+class restaurant extends place{
 	name = "";
 	type = "";
 	open= "";
@@ -36,6 +50,11 @@ class restaurant extends Location{
 		this.open = open;
 		this.tel = tel;
 		this.web = web;
+	}
+	showhans(i){
+		super.showhans(counter);
+		$("#"+counter).append(`<p ${this.name}</p> <p ${this.type}</p> <p ${this.open}</p> <p ${this.tel}</p> <p ${this.web}</p>`);
+		counter++;
 	}
 
 
@@ -53,7 +72,7 @@ data.push(zaza)
 data.push(bakers)
 
 // Clubs
-class club extends Location{
+class club extends place{
 	name = "";
 	music = "";
 	entry = "";
@@ -64,6 +83,11 @@ class club extends Location{
 		this.music = music;
 		this.entry = entry;
 		this.dresscode = dresscode;
+	}
+	showhans(i){
+		super.showhans(counter);
+		$("#"+counter).append(`<p ${this.name}</p> <p ${this.music}</p> <p ${this.entry}</p> <p ${this.dresscode}</p>`)
+		counter++;
 	}
 }
 
@@ -76,7 +100,7 @@ data.push(wester)
 data.push(jimmy)
 
 // Events
-class events extends Location{
+class events extends place{
 	name = "";
 	type = "";
 	date = "";
@@ -88,6 +112,11 @@ class events extends Location{
 		this.date = date;
 		this.costs = costs;
 	}
+	showhans(i){
+		super.showhans(counter);
+		$("#"+counter).append(`<p ${this.name}</p> <p ${this.type}</p> <p ${this.date}</p> <p ${this.costs}</p>`)
+		counter++;
+	}
 }
 
 let lightshow = new events("Netherlands","Amsterdam","Amsterdam",".img/amsterdamevent.jpg","Amsterdam Light Festival","winter outdoor festival of modern art, light and water."," Nov 28, 2019-Jan 19, 2020","for free",)
@@ -98,9 +127,14 @@ data.push(lightshow)
 data.push(christmas)
 data.push(kings)
 
+for(let i = 0; i<data.length; i++){
+	data[i].showhans();
+}
 
 /*Wenn ein Konstruktor verwendet wird, 
 muss das super Schlüsselwort verwendet werden, 
 bevor das this Schlüsselwort verwendet werden kann. 
 Mit dem super Schlüsselwort kann man auch Funktionen 
 im Vaterobjekt ausführen.*/
+
+/*musste place anstatt Location einsetzten in der parent class*/
