@@ -1,4 +1,5 @@
 // was brauch ich alles
+// output,array,counter,die divs....
 
 
 let output = document.querySelector(".out");
