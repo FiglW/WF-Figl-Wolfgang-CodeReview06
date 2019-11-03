@@ -139,3 +139,6 @@ Mit dem super Schlüsselwort kann man auch Funktionen
 im Vaterobjekt ausführen.*/
 
 /*musste place anstatt Location einsetzten in der parent class*/
+
+// probleme mit jquery konnte es installieren trotzdem funktioniert es nicht!//
+
