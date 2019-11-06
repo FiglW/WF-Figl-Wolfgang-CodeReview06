@@ -25,7 +25,7 @@ showhans(i){
 		output.innerHTML += 
 		`<div class ="col-lg-4 col-md-6 card cardSet1 text-white">
                 <div class="card-body">
-                    <img src="${this.img}" class="img-thumbnail" alt="AL"width="auto">
+                    <img src="${this.img}" class="img-thumbnail d-none d-md-block"  alt="AL"width="auto">
                     <h3 class="card-title mt-2">${this.country}</h3>
                     <h5 class="card-subtitle">${this.city}</h5>
                     <h6 class="card-subtitle">${this.address}</h6>
